@@ -10,7 +10,7 @@
   --font-serif: Georgia, "Times New Roman", serif;
   --font-mono: "Courier New", Courier, monospace;
   --max: 100%;
-  --page-pad: clamp(22px, 4vw, 52px);
+  --page-pad: clamp(38px, 7vw, 92px);
   --ease: cubic-bezier(0.19, 1, 0.22, 1);
 }
 
@@ -291,8 +291,8 @@ a {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  min-height: 58px;
-  padding: 0 var(--page-pad);
+  min-height: 66px;
+  padding: 6px var(--page-pad);
   border-top: 1px solid var(--rule);
   border-bottom: 1px solid var(--rule);
 }
@@ -456,16 +456,16 @@ a {
 
 .skills-table {
   display: grid;
-  gap: 76px;
+  gap: clamp(58px, 7vh, 76px);
   min-height: calc(100svh - 58px);
   align-content: center;
-  padding: clamp(74px, 9vh, 116px) var(--page-pad);
+  padding: clamp(74px, 9vh, 116px) clamp(48px, 14vw, 220px);
 }
 
 .skill-row {
   display: grid;
-  grid-template-columns: 210px 1fr;
-  gap: 42px;
+  grid-template-columns: clamp(150px, 17vw, 230px) minmax(0, 1fr);
+  gap: clamp(28px, 5vw, 64px);
   align-items: start;
 }
 
@@ -860,7 +860,7 @@ a {
   }
 
   .hero {
-    padding: 56px 22px 76px;
+    padding: 56px var(--page-pad) 76px;
   }
 
   .sketch-card {
@@ -870,12 +870,16 @@ a {
   }
 
   .section-strip,
-  .skills-table,
   .about-flow,
   .support-section,
   .footer {
-    padding-left: 22px;
-    padding-right: 22px;
+    padding-left: var(--page-pad);
+    padding-right: var(--page-pad);
+  }
+
+  .skills-table {
+    padding-left: var(--page-pad);
+    padding-right: var(--page-pad);
   }
 
   .about-flow {
