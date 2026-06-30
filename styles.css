@@ -170,194 +170,49 @@ a {
 .sketch-card {
   position: relative;
   justify-self: center;
-  width: min(370px, 82vw);
-  height: 292px;
-  animation: floatSketch 5s ease-in-out infinite;
+  width: min(390px, 82vw);
+  aspect-ratio: 1;
+  animation: floatSketch 5.8s ease-in-out infinite;
 }
 
-.sketch-head {
+.hero-illustration {
   position: absolute;
-  left: 66px;
-  top: 42px;
-  width: 210px;
-  height: 158px;
-  border: 4px solid #3d3d36;
-  border-radius: 52% 48% 45% 50%;
-  background: #f7f7ed;
-  transform: rotate(-6deg);
-}
-
-.curl {
-  position: absolute;
-  z-index: -1;
-  width: 76px;
-  height: 82px;
-  border: 4px solid #3d3d36;
-  border-bottom-color: transparent;
-  border-radius: 54% 46% 58% 42%;
-  background: #f7f7ed;
-  box-shadow: inset 9px -8px 0 rgba(61, 61, 54, 0.07);
-  animation: hairSway 3.8s ease-in-out infinite;
-}
-
-.curl::after {
-  position: absolute;
-  left: 18%;
-  top: 22%;
-  width: 46%;
-  height: 44%;
-  border-top: 3px solid rgba(61, 61, 54, 0.62);
-  border-radius: 50%;
-  content: "";
-  transform: rotate(-18deg);
-}
-
-.curl-1 {
-  left: -38px;
-  top: 8px;
-  transform: rotate(-34deg);
-}
-
-.curl-2 {
-  left: -2px;
-  top: -46px;
-  width: 96px;
-  height: 96px;
-  transform: rotate(-18deg);
-  animation-delay: -0.8s;
-}
-
-.curl-3 {
-  right: 12px;
-  top: -48px;
-  width: 100px;
-  height: 96px;
-  transform: rotate(18deg);
-  animation-delay: -1.6s;
-}
-
-.curl-4 {
-  right: -38px;
-  top: 12px;
-  height: 92px;
-  transform: rotate(34deg);
-  animation-delay: -2.2s;
-}
-
-.hair-lock {
-  position: absolute;
-  z-index: 2;
-  width: 62px;
-  height: 118px;
-  border: 4px solid #3d3d36;
-  border-top: 0;
-  border-left: 0;
-  border-radius: 0 0 999px 0;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
   pointer-events: none;
-  animation: hairLock 3.2s ease-in-out infinite;
+  user-select: none;
 }
 
-.lock-1 {
-  left: -14px;
-  top: 34px;
-  transform: rotate(18deg);
+.hero-illustration-base {
+  position: relative;
+  z-index: 1;
 }
 
-.lock-2 {
-  left: 38px;
-  top: 8px;
-  width: 54px;
-  height: 98px;
-  transform: rotate(8deg);
-  animation-delay: -0.9s;
+.hero-illustration-hair,
+.hero-illustration-body {
+  z-index: 2;
+  will-change: transform;
 }
 
-.lock-3 {
-  right: 34px;
-  top: 8px;
-  width: 54px;
-  height: 102px;
-  transform: rotate(-6deg) scaleX(-1);
-  animation-delay: -1.5s;
+.left-hair {
+  clip-path: polygon(0 0, 52% 0, 45% 100%, 0 100%);
+  transform-origin: 30% 18%;
+  animation: leftHairBreathe 4.6s ease-in-out infinite;
 }
 
-.lock-4 {
-  right: -14px;
-  top: 36px;
-  height: 122px;
-  transform: rotate(-18deg) scaleX(-1);
-  animation-delay: -2s;
+.right-hair {
+  clip-path: polygon(48% 0, 100% 0, 100% 100%, 54% 100%);
+  transform-origin: 72% 18%;
+  animation: rightHairBreathe 5.1s ease-in-out infinite;
 }
 
-.eye {
-  position: absolute;
-  top: 76px;
-  width: 34px;
-  height: 42px;
-  border: 3px solid #3d3d36;
-  border-radius: 50%;
-  background: var(--paper);
-}
-
-.eye::after {
-  position: absolute;
-  left: 10px;
-  top: 13px;
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: #3d3d36;
-  content: "";
-}
-
-.eye.left {
-  left: 68px;
-}
-
-.eye.right {
-  left: 112px;
-}
-
-.cheek {
-  position: absolute;
-  left: 55px;
-  top: 122px;
-  width: 35px;
-  height: 12px;
-  border-top: 2px dashed #3d3d36;
-}
-
-.mouth {
-  position: absolute;
-  left: 106px;
-  top: 126px;
-  width: 28px;
-  height: 14px;
-  border-bottom: 3px solid #3d3d36;
-  border-radius: 50%;
-}
-
-.sketch-neck {
-  position: absolute;
-  left: 150px;
-  top: 184px;
-  width: 62px;
-  height: 52px;
-  border: 3px solid #3d3d36;
-  background: #e1ec29;
-  transform: rotate(-6deg);
-}
-
-.sketch-shirt {
-  position: absolute;
-  left: 100px;
-  top: 224px;
-  width: 190px;
-  height: 58px;
-  border: 3px solid #3d3d36;
-  border-radius: 52% 48% 0 0;
-  background: #dce82c;
-  transform: rotate(5deg);
+.hero-illustration-body {
+  clip-path: polygon(16% 60%, 86% 60%, 88% 100%, 12% 100%);
+  transform-origin: 50% 82%;
+  animation: shoulderBreath 4.8s ease-in-out infinite;
 }
 
 .section-strip {
@@ -832,7 +687,7 @@ a {
     transform: translateY(0) rotate(0);
   }
   50% {
-    transform: translateY(-10px) rotate(1.5deg);
+    transform: translateY(-4px) rotate(0.4deg);
   }
 }
 
@@ -893,23 +748,33 @@ a {
   }
 }
 
-@keyframes hairSway {
+@keyframes leftHairBreathe {
   0%,
   100% {
-    margin-top: 0;
+    transform: translate3d(0, 0, 0) rotate(0deg);
   }
   50% {
-    margin-top: -4px;
+    transform: translate3d(-2px, -2px, 0) rotate(-0.55deg);
   }
 }
 
-@keyframes hairLock {
+@keyframes rightHairBreathe {
   0%,
   100% {
-    translate: 0 0;
+    transform: translate3d(0, 0, 0) rotate(0deg);
   }
   50% {
-    translate: 3px -3px;
+    transform: translate3d(2px, -2px, 0) rotate(0.55deg);
+  }
+}
+
+@keyframes shoulderBreath {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, 2px, 0) scale(1.006);
   }
 }
 
@@ -1041,5 +906,10 @@ a {
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .hero-illustration-hair,
+  .hero-illustration-body {
+    display: none;
   }
 }
