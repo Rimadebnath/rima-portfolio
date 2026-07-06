@@ -158,7 +158,18 @@ a {
   background: var(--paper);
   font: 700 14px var(--font-mono);
   transition: transform 0.2s var(--ease), background 0.2s ease, color 0.2s ease;
+  gap: 8px;
 }
+
+.btn-icon {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+  flex-shrink: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
 
 .outline-link:hover,
 .outline-link:focus-visible {
@@ -760,10 +771,18 @@ a {
 /* "What I'm currently working on" Section */
 .current-links {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(36px, 4vw, 64px);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(24px, 3vw, 42px);
   padding: clamp(60px, 8vh, 100px) var(--page-pad);
 }
+
+@media (max-width: 1200px) {
+  .current-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 36px;
+  }
+}
+
 
 .current-card {
   border: 1px solid var(--rule);
