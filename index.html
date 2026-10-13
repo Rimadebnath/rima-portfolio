@@ -7,6 +7,12 @@
   <meta name="description" content="Portfolio of Rima Debnath, a product-minded frontend engineer and UI developer." />
   <title>Rima Debnath | Portfolio</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Ramaraja&display=swap"
+    rel="stylesheet"
+  />
 </head>
 
 <body>
@@ -26,13 +32,10 @@
   <main>
     <section class="hero grid-page" aria-labelledby="intro-title">
       <div class="intro-copy reveal">
-        <h1 id="intro-title">
-          i'm rima --
-          <span>an ai product builder, frontend engineer, strategist, and designer.</span>
-        </h1>
-        <p>
-          i bring structure, clarity, and a user-first approach, particularly in complex or changing
-          situations.
+        <p class="hero-eyebrow">PRODUCT DESIGN · UX · BUILD</p>
+        <h1 id="intro-title" class="hero-headline">i'm rima, a product designer and builder.</h1>
+        <p class="hero-description">
+          i take products from messy brief to shipped, tested screens, and own the decisions in between.
         </p>
         <div class="hero-actions">
           <a class="outline-link magnetic" href="#work">see work</a>
@@ -65,10 +68,12 @@
             <article class="work-card">
               <span class="time">2026</span>
               <h3>LMS</h3>
-              <div class="project-preview portrait-preview" aria-hidden="true">
-                <span></span>
+              <p class="work-outcome">Coded interactive prototype, conflict detection & manager approval flow.</p>
+              <div class="project-preview">
+                <img class="work-card-cover" src="assets/cover-lms.jpg"
+                  alt="Leave Management System manager approval dashboard" loading="lazy" />
               </div>
-              <p>UX / Product Design / Manager Approval Flow</p>
+              <p class="work-tags">UX / Product Design / Manager Approval Flow</p>
             </article>
           </a>
         </div>
@@ -79,14 +84,12 @@
             <article class="work-card">
               <span class="time">2026</span>
               <h3>Storybook</h3>
-              <div class="project-preview storybook-preview" aria-hidden="true">
-                <div class="mini-browser"></div>
-                <div class="mini-sidebar"></div>
-                <div class="mini-lines">
-                  <span></span><span></span><span></span><span></span>
-                </div>
+              <p class="work-outcome">Foundations, design tokens & accessible component documentation.</p>
+              <div class="project-preview">
+                <img class="work-card-cover" src="assets/cover-storybook.jpg"
+                  alt="Storybook component library and design system documentation" loading="lazy" />
               </div>
-              <p>Design System / Storybook / Front-End Development</p>
+              <p class="work-tags">Design System / Storybook / Front-End Development</p>
             </article>
           </a>
         </div>
@@ -97,11 +100,12 @@
             <article class="work-card">
               <span class="time">2026</span>
               <h3>Foodbank</h3>
-              <div class="project-preview foodbank-preview" aria-hidden="true">
-                <img src="assets/foodbank-mockup.png" alt="Foodbank Donation mobile app interface mockup"
-                  class="work-card-image" />
+              <p class="work-outcome">One-screen checkout, coded prototype, backlog with acceptance criteria.</p>
+              <div class="project-preview">
+                <img class="work-card-cover" src="assets/cover-foodbank.jpg"
+                  alt="Foodbank donation mobile application screens and donation flow" loading="lazy" />
               </div>
-              <p>UX/UI Design / Mobile App Case Study / Foodbank Donation App</p>
+              <p class="work-tags">UX/UI Design / Mobile App Case Study / Foodbank Donation App</p>
             </article>
           </a>
         </div>
@@ -182,60 +186,63 @@
     <section class="paper-section" id="skills" aria-labelledby="skills-title">
       <div class="section-strip">
         <h2 id="skills-title">skills</h2>
-        <p>in order of relevance / proficiency</p>
+        <p>product / ux / build / tools</p>
       </div>
 
       <div class="skills-table">
         <div class="skill-row reveal">
+          <h3>Product</h3>
+          <div class="tag-list">
+            <span>Problem Framing</span>
+            <span>Prioritization</span>
+            <span>Roadmapping</span>
+            <span>Backlog & User Stories</span>
+            <span>Acceptance Criteria</span>
+            <span>Agile & Scrum</span>
+            <span>Gap Analysis</span>
+            <span>Sprint Planning</span>
+          </div>
+        </div>
+
+        <div class="skill-row reveal">
+          <h3>UX</h3>
+          <div class="tag-list">
+            <span>User Research</span>
+            <span>Information Architecture</span>
+            <span>Wireframing</span>
+            <span>Prototyping</span>
+            <span>Design Systems</span>
+            <span>Usability Testing</span>
+            <span>User Flows</span>
+            <span>Site Mapping</span>
+          </div>
+        </div>
+
+        <div class="skill-row reveal">
+          <h3>Build</h3>
+          <div class="tag-list">
+            <span>HTML/CSS</span>
+            <span>JavaScript</span>
+            <span>Python</span>
+            <span>SQL</span>
+            <span>UiPath</span>
+            <span>AI-Assisted Workflows</span>
+            <span>REST APIs</span>
+          </div>
+        </div>
+
+        <div class="skill-row reveal">
           <h3>Tools</h3>
           <div class="tag-list">
             <span>Figma</span>
-            <span>Adobe XD</span>
-            <span>Sketch</span>
-            <span>Adobe Illustration</span>
-            <span>Procreate</span>
-            <span>Canva</span>
+            <span>Storybook</span>
+            <span>GitHub</span>
+            <span>VS Code</span>
+            <span>Jira</span>
+            <span>Notion</span>
             <span>Claude AI</span>
-            <span>Jupyter Notebook</span>
-            <span>Codex</span>
-            <span>Wordpress</span>
-            <span>Github</span>
             <span>Slack</span>
             <span>Microsoft Office</span>
-            <span>VS Code</span>
-            <span>Notion</span>
-          </div>
-        </div>
-
-        <div class="skill-row reveal">
-          <h3>Skills</h3>
-          <div class="tag-list">
-            <span>Wireframing</span>
-            <span>Prototyping</span>
-            <span>Creating Workflows</span>
-            <span>Storyboarding</span>
-            <span>User Story</span>
-            <span>Design Thinking</span>
-            <span>Illustrating</span>
-            <span>Design System</span>
-            <span>Storybook</span>
-            <span>Site Mapping</span>
-            <span>AI-Driven Designing & Development</span>
-          </div>
-        </div>
-
-        <div class="skill-row reveal">
-          <h3>Technicals</h3>
-          <div class="tag-list">
-            <span>HTML/CSS</span>
-            <span>Javascript</span>
-            <span>Basic Java</span>
-            <span>Python</span>
-            <span>UI path</span>
-            <span>Canva</span>
-            <span>RPA (Robotic Process Automation)</span>
-            <span>Jupyter Notebook</span>
-            <span>Gap Analysis</span>
           </div>
         </div>
       </div>
@@ -292,26 +299,15 @@
         </div>
       </div>
     </section>
-
-    <section class="paper-section support-section" aria-labelledby="support-title">
-      <div class="support-card reveal">
-        <div class="coffee-mark" aria-hidden="true">
-          <span></span>
-        </div>
-        <div>
-          <h2 id="support-title">Buy Me a Coffee</h2>
-          <p>support future experiments, design notes, and tiny-but-useful frontend things.</p>
-        </div>
-        <a class="outline-link magnetic" href="https://razorpay.me/@microsoftservices" target="_blank"
-          rel="noopener noreferrer">Buy Me a Coffee</a>
-      </div>
-    </section>
   </main>
 
   <footer class="footer">
     <p>© <span id="year"></span> by Rima Debnath</p>
-    <p>contact: <a href="mailto:rimadebnath.connect@gmail.com">rimadebnath.connect@gmail.com</a></p>
-    <p>built from scratch :)</p>
+    <p class="footer-contact">contact: <a href="mailto:rimadebnath.connect@gmail.com">rimadebnath.connect@gmail.com</a></p>
+    <p class="footer-coffee">
+      <a class="coffee-link" href="https://razorpay.me/@microsoftservices" target="_blank"
+        rel="noopener noreferrer">buy me a coffee ☕</a>
+    </p>
   </footer>
 
   <script src="script.js"></script>
