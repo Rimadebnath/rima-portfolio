@@ -1,6 +1,16 @@
-.vercel
-.DS_Store
-Thumbs.db
-
+# Vercel & Environment
 .vercel
 .env*
+.env.local
+
+# Backups and temporary files
+*.bak
+*.BACKUP.*
+*.backup.*
+*.old
+_archive/
+
+# Operating System files
+.DS_Store
+Thumbs.db
+desktop.ini
