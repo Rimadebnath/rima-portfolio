@@ -230,30 +230,6 @@ a {
   z-index: 1;
 }
 
-.hero-illustration-hair,
-.hero-illustration-body {
-  z-index: 2;
-  will-change: transform;
-}
-
-.left-hair {
-  clip-path: polygon(0 0, 52% 0, 45% 100%, 0 100%);
-  transform-origin: 30% 18%;
-  animation: leftHairBreathe 4.6s ease-in-out infinite;
-}
-
-.right-hair {
-  clip-path: polygon(48% 0, 100% 0, 100% 100%, 54% 100%);
-  transform-origin: 72% 18%;
-  animation: rightHairBreathe 5.1s ease-in-out infinite;
-}
-
-.hero-illustration-body {
-  clip-path: polygon(16% 60%, 86% 60%, 88% 100%, 12% 100%);
-  transform-origin: 50% 82%;
-  animation: shoulderBreath 4.8s ease-in-out infinite;
-}
-
 .section-strip {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -885,36 +861,6 @@ a {
     gap: 28px;
     padding-left: var(--page-pad);
     padding-right: var(--page-pad);
-  }
-}
-
-@keyframes leftHairBreathe {
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0) rotate(0deg);
-  }
-  50% {
-    transform: translate3d(-2px, -2px, 0) rotate(-0.55deg);
-  }
-}
-
-@keyframes rightHairBreathe {
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0) rotate(0deg);
-  }
-  50% {
-    transform: translate3d(2px, -2px, 0) rotate(0.55deg);
-  }
-}
-
-@keyframes shoulderBreath {
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0) scale(1);
-  }
-  50% {
-    transform: translate3d(0, 2px, 0) scale(1.006);
   }
 }
 
