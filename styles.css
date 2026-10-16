@@ -278,33 +278,23 @@ a {
   letter-spacing: 0.06em;
 }
 
-.work-grid {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: clamp(56px, 6vw, 92px);
-  min-height: calc(100svh - 68px);
-  padding: clamp(70px, 8vh, 108px) var(--page-pad);
-  /* exactly two 340px cards per row on wide screens (2 + 2 grid) */
-  max-width: calc(680px + clamp(56px, 6vw, 92px) + 2 * var(--page-pad) + 1px);
-  margin: 0 auto;
-}
+/* ---------------------------------------------------------------
+   Work section layouts. Two layouts live here; switch between them
+   by changing ONE class on the grid element in index.html:
+     <div class="work-grid work-grid--wide">   2 x 2 wide cards (current)
+     <div class="work-grid work-grid--three">  original 3-column grid
+   Backup of the original 3-column files:
+   D:\_archive\portfolio-3col-grid-2026-10-16\
+   --------------------------------------------------------------- */
 
+/* Shared card look (both layouts) */
 .work-card-gradient {
   position: relative;
-  width: 340px;
-  height: 500px;
   border: 1px solid var(--rule);
   background-color: var(--paper);
 }
 
 .work-card {
-  position: absolute;
-  top: -12px;
-  left: -12px;
-  width: calc(100% + 2px);
-  height: calc(100% + 2px);
   display: flex;
   flex-direction: column;
   padding: 22px 22px 20px;
@@ -313,9 +303,121 @@ a {
   transition: top 0.38s var(--ease), left 0.38s var(--ease);
 }
 
-.work-card-gradient:hover .work-card {
+/* Layout A: 3-column grid of fixed 340 x 500px portrait cards
+   (3 + 1 on wide screens). Use class "work-grid--three". */
+.work-grid--three {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(56px, 6vw, 92px);
+  min-height: calc(100svh - 68px);
+  padding: clamp(70px, 8vh, 108px) var(--page-pad);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Small laptops: fit three 340px cards per row by tightening the spacing only */
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .work-grid--three {
+    column-gap: 48px;
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+}
+
+.work-grid--three .work-card-gradient {
+  width: 340px;
+  height: 500px;
+}
+
+.work-grid--three .work-card {
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+}
+
+.work-grid--three .work-card-gradient:hover .work-card {
   top: -1px;
   left: -1px;
+}
+
+/* Layout B: 2 x 2 wide cards, full page width, text left and cover
+   right (stacked, cover first, below 1024px). Use class "work-grid--wide". */
+.work-grid--wide {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(44px, 5vw, 64px) clamp(36px, 4vw, 56px);
+  padding: clamp(70px, 8vh, 108px) var(--page-pad);
+}
+
+.work-grid--wide .work-card-gradient {
+  display: flex;
+}
+
+/* In normal flow so the card sets its own height; the gradient layer
+   stretches with it and the row's cards share the tallest height */
+.work-grid--wide .work-card {
+  position: relative;
+  top: -11px;
+  left: -11px;
+  flex: 1;
+  min-width: 0;
+  margin: -1px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  /* tags sit right under the description; any spare height goes below them */
+  grid-template-rows: auto auto auto auto auto 1fr;
+  grid-template-areas: "cover" "time" "title" "text" "tags" ".";
+}
+
+.work-grid--wide .work-card-gradient:hover .work-card {
+  top: 0;
+  left: 0;
+}
+
+.work-grid--wide .time { grid-area: time; }
+.work-grid--wide .work-card h3 { grid-area: title; }
+.work-grid--wide .work-outcome { grid-area: text; min-height: 0; }
+.work-grid--wide .work-tags { grid-area: tags; }
+
+.work-grid--wide .project-preview {
+  grid-area: cover;
+  margin-bottom: 18px;
+}
+
+/* Tablets: one card per row; keep the cover from getting too big */
+@media (min-width: 680px) and (max-width: 1023px) {
+  .work-grid--wide .project-preview {
+    justify-self: center;
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .work-grid--wide {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .work-grid--wide .work-card {
+    grid-template-columns: minmax(0, 45fr) minmax(0, 55fr);
+    grid-template-rows: auto auto auto auto 1fr;
+    grid-template-areas:
+      "time  cover"
+      "title cover"
+      "text  cover"
+      "tags  cover"
+      ".     cover";
+    column-gap: clamp(20px, 2vw, 32px);
+    padding: 24px;
+  }
+
+  .work-grid--wide .project-preview {
+    align-self: center;
+    margin-bottom: 0;
+  }
 }
 
 /* Gradients for the behind layer */
@@ -745,7 +847,7 @@ a {
     justify-self: start;
   }
 
-  .work-grid {
+  .work-grid--three {
     max-width: 100%;
     gap: 36px;
   }
@@ -923,23 +1025,35 @@ a {
     width: 100%;
   }
 
-  .work-grid {
+  .work-grid--three {
     padding-left: 18px;
     padding-right: 18px;
     gap: 32px;
   }
 
-  .work-card-gradient {
+  .work-grid--three .work-card-gradient {
     width: 290px;
     height: 440px;
   }
 
-  .work-card {
+  .work-grid--three .work-card {
     top: -8px;
     left: -8px;
     width: calc(100% + 2px);
     height: calc(100% + 2px);
+  }
+
+  .work-card {
     padding: 20px 18px 18px;
+  }
+
+  .work-grid--wide .work-card {
+    top: -7px;
+    left: -7px;
+  }
+
+  .work-grid--wide .project-preview {
+    margin-bottom: 14px;
   }
 
   .work-card h3 {
