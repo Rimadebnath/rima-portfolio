@@ -353,19 +353,29 @@ a {
   padding: clamp(70px, 8vh, 108px) var(--page-pad);
 }
 
+/* The coloured layer and the card share one grid cell, so the layer is
+   always exactly the card's size. The layer's border is drawn with an
+   inset shadow (no extra size), and the card is offset with a transform. */
 .work-grid--wide .work-card-gradient {
-  display: flex;
+  display: grid;
+  border: 0;
+  box-shadow: inset 0 0 0 1px var(--rule);
 }
 
-/* In normal flow so the card sets its own height; the gradient layer
-   stretches with it and the row's cards share the tallest height */
+/* The link between layer and card must pass the full height down too,
+   otherwise a card with less text ends up shorter than its layer */
+.work-grid--wide .card-link {
+  display: grid;
+  min-width: 0;
+}
+
 .work-grid--wide .work-card {
   position: relative;
-  top: -11px;
-  left: -11px;
-  flex: 1;
+  top: 0;
+  left: 0;
   min-width: 0;
-  margin: -1px;
+  transform: translate(-11px, -11px);
+  transition: transform 0.38s var(--ease);
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   /* tags sit right under the description; any spare height goes below them */
@@ -374,8 +384,7 @@ a {
 }
 
 .work-grid--wide .work-card-gradient:hover .work-card {
-  top: 0;
-  left: 0;
+  transform: translate(0, 0);
 }
 
 .work-grid--wide .time { grid-area: time; }
@@ -1048,8 +1057,7 @@ a {
   }
 
   .work-grid--wide .work-card {
-    top: -7px;
-    left: -7px;
+    transform: translate(-7px, -7px);
   }
 
   .work-grid--wide .project-preview {
