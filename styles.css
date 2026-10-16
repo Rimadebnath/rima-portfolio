@@ -286,6 +286,17 @@ a {
   gap: clamp(56px, 6vw, 92px);
   min-height: calc(100svh - 68px);
   padding: clamp(70px, 8vh, 108px) var(--page-pad);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Small laptops: fit three 340px cards per row by tightening the spacing only */
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .work-grid {
+    column-gap: 48px;
+    padding-left: 64px;
+    padding-right: 64px;
+  }
 }
 
 .work-card-gradient {
@@ -322,6 +333,10 @@ a {
 
 .lms-gradient {
   background: linear-gradient(180deg, #2f22cc 0%, #8ca1f5 60%, var(--paper) 100%);
+}
+
+.antrixmesh-gradient {
+  background: linear-gradient(180deg, #d9480f 0%, #f4a77e 55%, var(--paper) 100%);
 }
 
 .figmalite-gradient {
