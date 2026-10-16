@@ -286,17 +286,9 @@ a {
   gap: clamp(56px, 6vw, 92px);
   min-height: calc(100svh - 68px);
   padding: clamp(70px, 8vh, 108px) var(--page-pad);
-  max-width: 1400px;
+  /* exactly two 340px cards per row on wide screens (2 + 2 grid) */
+  max-width: calc(680px + clamp(56px, 6vw, 92px) + 2 * var(--page-pad) + 1px);
   margin: 0 auto;
-}
-
-/* Small laptops: fit three 340px cards per row by tightening the spacing only */
-@media (min-width: 1280px) and (max-width: 1439px) {
-  .work-grid {
-    column-gap: 48px;
-    padding-left: 64px;
-    padding-right: 64px;
-  }
 }
 
 .work-card-gradient {
