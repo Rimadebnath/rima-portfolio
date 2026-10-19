@@ -211,7 +211,6 @@ a {
   justify-self: center;
   width: min(390px, 82vw);
   aspect-ratio: 1;
-  animation: floatSketch 5.8s ease-in-out infinite;
 }
 
 .hero-illustration {
@@ -744,16 +743,6 @@ a {
   transform: translateY(0);
 }
 
-@keyframes floatSketch {
-  0%,
-  100% {
-    transform: translateY(0) rotate(0);
-  }
-  50% {
-    transform: translateY(-4px) rotate(0.4deg);
-  }
-}
-
 /* "What I'm currently working on" Section */
 .current-links {
   display: grid;
@@ -934,8 +923,6 @@ a {
 
   .sketch-card {
     width: 290px;
-    transform: scale(0.84);
-    transform-origin: center;
   }
 
   .section-strip,
